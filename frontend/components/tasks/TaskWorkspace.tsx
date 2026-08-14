@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import Link from "next/link";
+
 const columns = [
   {
     id: "todo",
@@ -158,7 +160,12 @@ function BoardView() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <h4 className="text-sm font-medium text-zinc-900">
-                    {task.title}
+                    <Link
+                      href={`/tasks/${task.id}`}
+                      className="text-sm font-medium text-zinc-900 hover:underline"
+                    >
+                      {task.title}
+                    </Link>
                   </h4>
 
                   <button
@@ -236,7 +243,12 @@ function ListView() {
                 className="border-b border-zinc-100 last:border-b-0 hover:bg-zinc-50"
               >
                 <td className="px-5 py-4 text-sm font-medium text-zinc-900">
-                  {task.title}
+                  <Link
+                    href={`/tasks/${task.id}`}
+                    className="text-sm font-medium text-zinc-900 hover:underline"
+                  >
+                    {task.title}
+                  </Link>
                 </td>
 
                 <td className="px-5 py-4 text-sm text-zinc-600">
